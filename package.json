@@ -1,0 +1,20 @@
+{
+  "name": "calendar",
+  "version": "0.0.1",
+  "description": "Simple [React.js] Calendar component inspired by [CLNDR.js]().",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "envify": "^1.2.1",
+    "react": "^0.10.0",
+    "react-tools": "^0.10.0",
+    "uglify-js": "^2.4.13"
+  }
+}
