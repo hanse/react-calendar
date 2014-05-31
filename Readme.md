@@ -1,11 +1,10 @@
 # react-calendar
 
-Simple [React.js] Calendar component inspired by [CLNDR.js]().
+[React](http://facebook.github.io/react/) calendar component inspired by [CLNDR.js](http://kylestetz.github.io/CLNDR/).
 
-Depends on [react.js]() and [moment.js]().
 
 # See the demo
-```
+```bash
 open example/index.html
 ```
 

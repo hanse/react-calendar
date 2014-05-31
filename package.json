@@ -1,7 +1,7 @@
 {
-  "name": "calendar",
+  "name": "react-calendar",
   "version": "0.0.1",
-  "description": "Simple [React.js] Calendar component inspired by [CLNDR.js]().",
+  "description": "React.js calendar component.",
   "main": "index.js",
   "directories": {
     "example": "example"

@@ -69,7 +69,7 @@
      * Return an array of days for the current month
      */
     days: function() {
-      var daysArray = [];
+      var days = [];
       var date = this.state.date.startOf('month');
       var diff = date.weekday() - this.props.weekOffset;
       if (diff < 0) diff += 7;
@@ -77,31 +77,31 @@
       var i;
       for (var i = 0; i < diff; i++) {
         var day = moment([this.state.date.year(), this.state.date.month(), i-diff+1])
-        daysArray.push({day: day, classes: 'prev-month'});
+        days.push({day: day, classes: 'prev-month'});
       }
 
       var numberOfDays = date.daysInMonth();
       for (i = 1; i <= numberOfDays; i++) {
         var day = moment([this.state.date.year(), this.state.date.month(), i]);
-        daysArray.push({day: day});
+        days.push({day: day});
       }
 
       i = 1;
-      while (daysArray.length % 7 !== 0) {
+      while (days.length % 7 !== 0) {
         var day = moment([this.state.date.year(), this.state.date.month(), numberOfDays+i]);
-        daysArray.push({day: day, classes: 'next-month'});
+        days.push({day: day, classes: 'next-month'});
         i++;
       }
 
-      if (this.props.forceSixRows && daysArray.length !== 42) {
-        var start = moment(daysArray[daysArray.length-1].date).add('days', 1);
-        while (daysArray.length < 42) {
-          daysArray.push({day: moment(start), classes: 'next-month'});
+      if (this.props.forceSixRows && days.length !== 42) {
+        var start = moment(days[days.length-1].date).add('days', 1);
+        while (days.length < 42) {
+          days.push({day: moment(start), classes: 'next-month'});
           start.add('days', 1);
         }
       }
 
-      return daysArray;
+      return days;
     },
 
     render: function() {
