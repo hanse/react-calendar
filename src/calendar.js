@@ -1,8 +1,6 @@
 /** @jsx React.DOM */
 ;(function(root) {
 
-  moment.lang('nb')
-
   var Day = React.createClass({
     render: function() {
       return (
@@ -68,6 +66,7 @@
     /**
      * Return an array of days for the current month
      */
+
     days: function() {
       var days = [];
       var date = this.state.date.startOf('month');
