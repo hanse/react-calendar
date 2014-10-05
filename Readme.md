@@ -2,6 +2,9 @@
 
 [React](http://facebook.github.io/react/) calendar component inspired by [CLNDR.js](http://kylestetz.github.io/CLNDR/).
 
+```
+$ npm install react-calendar-component
+```
 
 # See the demo
 ```bash
