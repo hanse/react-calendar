@@ -1,6 +1,6 @@
 {
   "name": "react-calendar-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React.js calendar component.",
   "main": "./dist/calendar.js",
   "directories": {
