@@ -2,15 +2,16 @@
   "name": "react-calendar",
   "version": "0.0.1",
   "description": "React.js calendar component.",
-  "main": "index.js",
+  "main": "src/calendar.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Hanse",
   "license": "MIT",
+  "keywords": ["react", "react.js", "calendar", "react component", "react calendar component", "clndr"],
   "dependencies": {
     "envify": "^1.2.1",
     "react": "^0.10.0",

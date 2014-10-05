@@ -6,10 +6,10 @@ all: dist/calendar.js dist/calendar.min.js
 
 dist/calendar.js: src/calendar.js
 	mkdir -p dist
-	$(JSX) src/calendar.js > dist/calendar.js
+	$(JSX) $< > $@
 
 dist/calendar.min.js: dist/calendar.js
-	$(UGLIFY) < dist/calendar.js > dist/calendar.min.js
+	$(UGLIFY) < $< > $@
 
 clean:
 	rm -rf dist
