@@ -2,7 +2,7 @@
   "name": "react-calendar-component",
   "version": "0.0.2",
   "description": "React.js calendar component.",
-  "main": "src/calendar.js",
+  "main": "./dist/calendar.js",
   "directories": {
     "example": "example"
   },
