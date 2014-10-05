@@ -2,6 +2,13 @@
 ;(function(root) {
 
   var Day = React.createClass({
+
+    getDefaultProps: function() {
+      return {
+        classes: ''
+      };
+    },
+
     render: function() {
       return (
         <div className={this.props.day.classes}>
