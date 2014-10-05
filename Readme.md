@@ -7,16 +7,15 @@ $ npm install react-calendar-component
 ```
 
 # See the demo
-```bash
-open example/index.html
-```
+http://hanse.github.io/react-calendar/
 
 ```js
+/** @jsx React.DOM */
 var React = require('react');
-var Calendar = require('react-calendar');
+var Calendar = require('react-calendar-component');
 
 React.renderComponent(
-  Calendar(),
+  <Calendar />,
   document.getElementById('calendar')
 );
 ```
