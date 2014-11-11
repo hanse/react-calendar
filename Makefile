@@ -15,4 +15,7 @@ dist/calendar.min.js: dist/calendar.js
 clean:
 	rm -rf dist
 
+test:
+	mocha src/__tests__
+
 .PHONY: clean
