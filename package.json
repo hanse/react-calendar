@@ -24,9 +24,11 @@
     "clndr"
   ],
   "devDependencies": {
+    "browserify": "^6.3.2",
     "envify": "^3.0.0",
     "react": "^0.11.2",
     "react-tools": "^0.11.2",
+    "reactify": "^0.15.2",
     "uglify-js": "^2.4.15"
   }
 }
