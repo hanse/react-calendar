@@ -54,11 +54,11 @@ var Calendar = React.createClass({displayName: 'Calendar',
   },
 
   next: function() {
-    this.setState({date: this.state.date.add('months', 1)});
+    this.setState({date: this.state.date.add(1, 'months')});
   },
 
   prev: function() {
-    this.setState({date: this.state.date.subtract('months', 1)});
+    this.setState({date: this.state.date.subtract(1, 'months')});
   },
 
   createDay: function(day) {
@@ -98,10 +98,10 @@ var Calendar = React.createClass({displayName: 'Calendar',
     }
 
     if (this.props.forceSixRows && days.length !== 42) {
-      var start = moment(days[days.length-1].date).add('days', 1);
+      var start = moment(days[days.length-1].date).add(1, 'days');
       while (days.length < 42) {
         days.push({day: moment(start), classes: 'next-month'});
-        start.add('days', 1);
+        start.add(1, 'days');
       }
     }
 
