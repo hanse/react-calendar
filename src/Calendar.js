@@ -1,40 +1,9 @@
-var Day = React.createClass({
+'use strict';
 
-  getDefaultProps: function() {
-    return {
-      classes: ''
-    };
-  },
-
-  render: function() {
-    return (
-      <div className={this.props.day.classes}>
-        <span className='day-number'>{this.props.day.day.date()}</span>
-      </div>
-    );
-  }
-});
-
-var CalendarControls = React.createClass({
-
-  next: function() {
-    this.props.onNext();
-  },
-
-  prev: function() {
-    this.props.onPrev();
-  },
-
-  render: function() {
-    return (
-      <div className='clndr-controls'>
-        <div onClick={this.prev}>Prev</div>
-        <div className='current-month'>{this.props.date.format('MMMM YYYY')}</div>
-        <div onClick={this.next}>Next</div>
-      </div>
-    );
-  }
-});
+var React = require('react');
+var moment = require('moment');
+var Day = require('./Day');
+var CalendarControls = require('./CalendarControls');
 
 var Calendar = React.createClass({
 
@@ -108,8 +77,8 @@ var Calendar = React.createClass({
   },
 
   render: function() {
-    var renderDay = function(day) {
-      return <Day day={day} />;
+    var renderDay = function(day, i) {
+      return <Day key={'day-' + i} day={day} />;
     };
 
     return (
