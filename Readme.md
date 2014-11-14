@@ -11,7 +11,7 @@ http://hanse.github.io/react-calendar/
 
 ```js
 var React = require('react');
-var Calendar = require('react-calendar-component');
+var Calendar = require('react-calendar-component').Calendar;
 
 React.render(
   <Calendar />,
