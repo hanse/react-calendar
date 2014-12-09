@@ -92,6 +92,10 @@ var Calendar = React.createClass({
       return <Day key={'day-' + i} day={day} />;
     };
 
+    var renderDaysOfWeek = function(dayLabel) {
+      return <div>{dayLabel}</div>;
+    };
+
     return (
       <div className='clndr'>
         <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
