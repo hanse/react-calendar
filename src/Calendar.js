@@ -76,15 +76,33 @@ var Calendar = React.createClass({
     return days;
   },
 
+  daysOfWeek: function() {
+    var daysOfWeek = [], days = this.days(), i = 0;
+    while (i < 7) {
+      //var dayLabel = days[i].day.format('dd');  <-- this logically should work, but for some reason it doesn't... moment for other month view bug??
+      var dayOfWeek = moment(days[i].day.toDate()).format('dd'); // <-- rendundant but works everytime...
+      daysOfWeek.push(dayOfWeek);
+      i++;
+    }
+    return daysOfWeek;
+  },
+
   render: function() {
     var renderDay = function(day, i) {
       return <Day key={'day-' + i} day={day} />;
+    };
+
+    var renderDaysOfWeek = function(dayLabel) {
+      return <div>{dayLabel}</div>;
     };
 
     return (
       <div className='clndr'>
         <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
         <div className='clndr-grid'>
+          <div className='days daysOfWeek'>
+            {this.daysOfWeek().map(renderDaysOfWeek)}
+          </div>
           <div className='days'>
             {this.days().map(renderDay)}
           </div>
