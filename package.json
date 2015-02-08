@@ -6,9 +6,10 @@
     "type": "git",
     "url": "git@github.com:Hanse/react-calendar"
   },
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "prepublish": "make publish"
   },
   "author": "Hanse",
   "license": "MIT",
@@ -21,8 +22,6 @@
     "clndr"
   ],
   "devDependencies": {
-    "browserify": "^6.3.2",
-    "reactify": "^0.15.2",
-    "uglify-js": "^2.4.15"
+    "react-tools": "^0.12.2"
   }
 }

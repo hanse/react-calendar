@@ -1,15 +1,8 @@
 
-JSX = node_modules/.bin/jsx
-BROWSERIFY = node_modules/.bin/browserify
-UGLIFY = node_modules/.bin/uglifyjs
+BIN = node_modules/.bin
 
-all: docs/bundle.js
-
-docs/bundle.js: docs/index.js src/*.js
-	$(BROWSERIFY) -t [reactify --harmony] docs/index.js > $@
-
-clean:
-	rm docs/bundle.js
+publish:
+	$(BIN)/jsx --harmony src/ lib/; find lib -name __tests__ -type d -print0 | xargs -0 rm -r --
 
 test:
 	mocha src/__tests__

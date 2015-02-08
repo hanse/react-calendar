@@ -49,6 +49,14 @@ body {
   border: 1px solid #ddd;
 }
 
+.clndr-grid .day-headers div {
+  float: left;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background: #eee;
+}
+
 .prev-month, .next-month {
   color: #ccc;
 }
