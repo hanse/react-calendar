@@ -7,12 +7,18 @@ var CalendarControls = require('./CalendarControls');
 
 var Calendar = React.createClass({
 
+  propTypes: {
+    weekOffset: React.PropTypes.number,
+    forceSixRows: React.PropTypes.bool,
+    showDaysOfWeek: React.PropTypes.bool,
+  },
+
   getDefaultProps: function() {
     return {
       weekOffset: 0,
-      lang: 'en',
       forceSixRows: false,
-      showWeekNumbers: false,
+      showDaysOfWeek: false,
+      onPickDate: null
     };
   },
 
@@ -28,13 +34,6 @@ var Calendar = React.createClass({
 
   prev: function() {
     this.setState({date: this.state.date.subtract(1, 'months')});
-  },
-
-  createDay: function(day) {
-    return {
-      day: day.date(),
-      date: day
-    };
   },
 
   days: function() {
@@ -90,13 +89,13 @@ var Calendar = React.createClass({
         <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
         <div className='clndr-grid'>
           <div className='day-headers'>
-            {this.props.showDaysOfWeek && this.daysOfWeek().map((day) => {
-              return <div>{day}</div>;
+            {this.props.showDaysOfWeek && this.daysOfWeek().map((day, i) => {
+              return <div key={'weekday-' + i}>{day}</div>;
             })}
           </div>
           <div className='days'>
             {this.days().map((day, i) => {
-              return <Day key={'day-' + i} day={day} />;
+              return <Day key={'day-' + i} day={day} onClick={this.props.onPickDate} />;
             })}
           </div>
           <div className='clearfix'></div>

@@ -13,8 +13,14 @@ http://hanse.github.io/react-calendar/
 var React = require('react');
 var Calendar = require('react-calendar-component').Calendar;
 
+function onDatePicked(date) {
+  alert(date);
+}
+
 React.render(
-  <Calendar showDaysOfWeek={true} />,
+  <Calendar showDaysOfWeek={true}
+            forceSixRows={false}
+            onPickDate={onDatePicked} />,
   document.getElementById('calendar')
 );
 ```

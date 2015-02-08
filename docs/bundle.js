@@ -2,8 +2,13 @@
 var React = require('react');
 var $__0=  require('../src'),Calendar=$__0.Calendar;
 
+function datePicked(date) {
+  console.log(date);
+}
+
 React.render(
-	React.createElement(Calendar, {showDaysOfWeek: true}),
+	React.createElement(Calendar, {showDaysOfWeek: true, 
+            onPickDate: datePicked}),
 	document.getElementById('calendar')
 );
 
@@ -21178,12 +21183,18 @@ var CalendarControls = require('./CalendarControls');
 
 var Calendar = React.createClass({displayName: "Calendar",
 
+  propTypes: {
+    weekOffset: React.PropTypes.number,
+    forceSixRows: React.PropTypes.bool,
+    showDaysOfWeek: React.PropTypes.bool,
+  },
+
   getDefaultProps: function() {
     return {
       weekOffset: 0,
-      lang: 'en',
       forceSixRows: false,
-      showWeekNumbers: false,
+      showDaysOfWeek: false,
+      onPickDate: null
     };
   },
 
@@ -21199,13 +21210,6 @@ var Calendar = React.createClass({displayName: "Calendar",
 
   prev: function() {
     this.setState({date: this.state.date.subtract(1, 'months')});
-  },
-
-  createDay: function(day) {
-    return {
-      day: day.date(),
-      date: day
-    };
   },
 
   days: function() {
@@ -21260,13 +21264,15 @@ var Calendar = React.createClass({displayName: "Calendar",
       React.createElement("div", {className: "clndr"}, 
         React.createElement(CalendarControls, {date: this.state.date, onNext: this.next, onPrev: this.prev}), 
         React.createElement("div", {className: "clndr-grid"}, 
-          this.props.showDaysOfWeek && this.daysOfWeek().map(function(day)  {
-            return React.createElement("div", null, day);
-          }), 
+          React.createElement("div", {className: "day-headers"}, 
+            this.props.showDaysOfWeek && this.daysOfWeek().map(function(day, i)  {
+              return React.createElement("div", {key: 'weekday-' + i}, day);
+            })
+          ), 
           React.createElement("div", {className: "days"}, 
             this.days().map(function(day, i)  {
-              return React.createElement(Day, {key: 'day-' + i, day: day});
-            })
+              return React.createElement(Day, {key: 'day-' + i, day: day, onClick: this.props.onPickDate});
+            }.bind(this))
           ), 
           React.createElement("div", {className: "clearfix"})
         )
@@ -21318,9 +21324,14 @@ var Day = React.createClass({displayName: "Day",
     };
   },
 
+  _onClick: function() {
+    if (this.props.onClick)
+      this.props.onClick(this.props.day.day);
+  },
+
   render: function() {
     return (
-      React.createElement("div", {className: this.props.day.classes}, 
+      React.createElement("div", {onClick: this._onClick, className: this.props.day.classes}, 
         React.createElement("span", {className: "day-number"}, this.props.day.day.date())
       )
     );
