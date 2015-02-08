@@ -12,7 +12,7 @@
   "dependencies": {
     "moment": "^2.9.0",
     "react": "^0.12.2",
-    "react-calendar-component": "^0.1.0"
+    "react-calendar-component": "latest"
   },
   "devDependencies": {
     "browserify": "^8.1.3",
