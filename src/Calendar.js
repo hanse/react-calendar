@@ -12,12 +12,13 @@ var Calendar = React.createClass({
       weekOffset: 0,
       lang: 'en',
       forceSixRows: false,
+      showWeekNumbers: false,
     };
   },
 
   getInitialState: function() {
     return {
-      date: moment()
+      date: moment(),
     };
   },
 
@@ -36,31 +37,27 @@ var Calendar = React.createClass({
     };
   },
 
-  /**
-   * Return an array of days for the current month
-   */
-
   days: function() {
     var days = [];
     var date = this.state.date.startOf('month');
     var diff = date.weekday() - this.props.weekOffset;
     if (diff < 0) diff += 7;
 
-    var i;
-    for (var i = 0; i < diff; i++) {
-      var day = moment([this.state.date.year(), this.state.date.month(), i-diff+1])
+    var i, day;
+    for (i = 0; i < diff; i++) {
+      day = moment([this.state.date.year(), this.state.date.month(), i-diff+1])
       days.push({day: day, classes: 'prev-month'});
     }
 
     var numberOfDays = date.daysInMonth();
     for (i = 1; i <= numberOfDays; i++) {
-      var day = moment([this.state.date.year(), this.state.date.month(), i]);
+      day = moment([this.state.date.year(), this.state.date.month(), i]);
       days.push({day: day});
     }
 
     i = 1;
     while (days.length % 7 !== 0) {
-      var day = moment([this.state.date.year(), this.state.date.month(), numberOfDays+i]);
+      day = moment([this.state.date.year(), this.state.date.month(), numberOfDays+i]);
       days.push({day: day, classes: 'next-month'});
       i++;
     }
@@ -76,17 +73,31 @@ var Calendar = React.createClass({
     return days;
   },
 
-  render: function() {
-    var renderDay = function(day, i) {
-      return <Day key={'day-' + i} day={day} />;
-    };
+  daysOfWeek: function() {
+    var daysOfWeek = this.props.daysOfWeek;
+    if (!daysOfWeek) {
+      daysOfWeek = [];
+      for (var i = 0; i < 7; i++) {
+        daysOfWeek.push(moment().weekday(i).format('dd').charAt(0));
+      }
+    }
+    return daysOfWeek;
+  },
 
+  render: function() {
     return (
       <div className='clndr'>
         <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
         <div className='clndr-grid'>
+          <div className='day-headers'>
+            {this.props.showDaysOfWeek && this.daysOfWeek().map((day) => {
+              return <div>{day}</div>;
+            })}
+          </div>
           <div className='days'>
-            {this.days().map(renderDay)}
+            {this.days().map((day, i) => {
+              return <Day key={'day-' + i} day={day} />;
+            })}
           </div>
           <div className='clearfix'></div>
         </div>
