@@ -33,5 +33,14 @@ $ npm install
 $ make
 ```
 
+# Contributing
+
+run these commands to get a watched build of the demo.
+```bash
+$ npm install
+$ cd examples/basic
+$ npm run watch
+```
+
 # License
 MIT
