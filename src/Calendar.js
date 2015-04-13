@@ -23,6 +23,9 @@ var Calendar = React.createClass({
   },
 
   getInitialState: function() {
+    if(this.props.date instanceof Date) {
+      this.props.date = moment(this.props.date);
+    }
     return {
       date: this.props.date || moment(),
     };
@@ -84,6 +87,8 @@ var Calendar = React.createClass({
   },
 
   render: function() {
+    var now = new moment();
+    var today = now.date();
     return (
       <div className='clndr'>
         <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
@@ -95,6 +100,10 @@ var Calendar = React.createClass({
           </div>
           <div className='days'>
             {this.days().map((day, i) => {
+              day.classes = [];
+              if(day.day.date() === today){
+                day.classes.push('today');
+              }
               return <Day key={'day-' + i} day={day} onClick={this.props.onPickDate} />;
             })}
           </div>

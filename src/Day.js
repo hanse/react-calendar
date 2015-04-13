@@ -6,7 +6,7 @@ var Day = React.createClass({
 
   getDefaultProps: function() {
     return {
-      classes: ''
+      classes: []
     };
   },
 
@@ -17,8 +17,8 @@ var Day = React.createClass({
 
   render: function() {
     return (
-      <div onClick={this._onClick} className={this.props.day.classes}>
-        <span className='day-number'>{this.props.day.day.date()}</span>
+      <div onClick={this._onClick} className={this.props.day.classes.join(' ')}>
+        <span className={'day-number'}>{this.props.day.day.date()}</span>
       </div>
     );
   }
