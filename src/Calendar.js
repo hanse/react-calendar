@@ -24,7 +24,7 @@ var Calendar = React.createClass({
 
   getInitialState: function() {
     return {
-      date: moment(),
+      date: this.props.date || moment(),
     };
   },
 
