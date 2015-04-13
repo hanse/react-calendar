@@ -10,7 +10,7 @@ function datePicked(date) {
 
 React.render(
   <Calendar showDaysOfWeek={true}
-            date={moment()}
+            date={new Date()}
             onPickDate={datePicked} />,
   document.getElementById('calendar')
 );

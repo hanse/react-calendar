@@ -35,9 +35,10 @@ $ make
 
 # Contributing
 
-run these commands to get a watched build of the demo. (no live reload)
+run these commands to get a watched build of the demo.
 ```bash
 $ npm install
+$ cd examples/basic && npm install && cd ../..
 $ npm run watch
 ```
 
