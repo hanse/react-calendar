@@ -10,7 +10,7 @@
   "scripts": {
     "test": "make test",
     "prepublish": "make publish",
-    "watch": "open examples/basic/index.html && cd examples/basic/ && npm run watch"
+    "watch": "open examples/basic/index.html && cd examples/basic/ && npm run watch "
   },
   "author": "Hanse",
   "license": "MIT",
