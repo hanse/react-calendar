@@ -23,6 +23,6 @@
     "clndr"
   ],
   "devDependencies": {
-    "react-tools": "^0.12.2"
+    "react-tools": "^0.13.1"
   }
 }
