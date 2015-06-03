@@ -4,7 +4,7 @@
   "description": "React.js calendar component with controls",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Blackening999/react-calendar-flexible"
+    "url": "git@github.com:Blackening999/react-calendar"
   },
   "main": "./lib/index.js",
   "scripts": {
