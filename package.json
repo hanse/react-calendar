@@ -1,10 +1,10 @@
 {
-  "name": "react-calendar-component",
+  "name": "react-calendar-flexible",
   "version": "0.2.3",
-  "description": "React.js calendar component (forked) from git@github.com:Hanse/react-calendar",
+  "description": "React.js calendar component with controls",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Blackening999/react-calendar"
+    "url": "git@github.com:Blackening999/react-calendar-flexible"
   },
   "main": "./lib/index.js",
   "scripts": {
