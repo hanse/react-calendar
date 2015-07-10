@@ -11,6 +11,7 @@ var Calendar = React.createClass({displayName: "Calendar",
     weekOffset: React.PropTypes.number,
     forceSixRows: React.PropTypes.bool,
     showDaysOfWeek: React.PropTypes.bool,
+    untilDate: React.PropTypes.bool,
     selectedOption: React.PropTypes.object,
   },
 
@@ -19,6 +20,7 @@ var Calendar = React.createClass({displayName: "Calendar",
       weekOffset: 0,
       forceSixRows: false,
       showDaysOfWeek: false,
+      untilDate: false,
       selectedOption: {},
       onPickDate: null
     };
@@ -113,6 +115,7 @@ var Calendar = React.createClass({displayName: "Calendar",
             this.weeks().map(function(week, i)  {
               return React.createElement(Week, {
                 selectedOption: this.props.selectedOption,
+                untilDate: this.props.untilDate,
                 key: 'week-' + i,
                 week: week,
                 onClick: this.props.onPickDate});
