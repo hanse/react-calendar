@@ -59,6 +59,7 @@ var Week = React.createClass({displayName: "Week",
         this.props.week.map(function(day, i)  {
           return React.createElement(Day, {
               selectedOption: this.props.selectedOption,
+              untilDate: this.props.untilDate,
               key: 'day-' + i,
               day: day,
               onClick: this._onClick}

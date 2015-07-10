@@ -17,9 +17,15 @@ var Day = React.createClass({displayName: "Day",
   },
 
   isSelectedClass: function() {
-    var selectedDateNumber = this.extractDate(), weekClass = '';
+    var selectedDateNumber = this.extractDate(),
+        weekClass = '',
+        currentDay = moment().format('YYYY-MM-DD'),
+        componentDay = moment([this.props.day.day.year(), this.props.day.day.month(), this.props.day.day.date()]).format('YYYY-MM-DD'),
+        isUntilDate = (selectedDateNumber && this.props.untilDate),
+        isComponentDateInRange = (componentDay >= currentDay && componentDay <= selectedDateNumber),
+        isSelectedDay = (this.props.selectedOption.show === 'day' && selectedDateNumber === this.props.day.day.format('YYYY-MM-DD'));
 
-    if (this.props.selectedOption.show === 'day' && selectedDateNumber === Number(this.props.day.day.date())) {
+    if (isUntilDate && isComponentDateInRange || isSelectedDay) {
       weekClass = 'selected-day';
     }
 
@@ -31,12 +37,13 @@ var Day = React.createClass({displayName: "Day",
 
     if (this.props.selectedOption.show === 'day') {
       if (fromCurrent) {
-        date = this.props.day.day.year() + "-" + this.props.day.day.month() + "-" + this.props.day.day.date();
+        date = moment([this.props.day.day.year(), this.props.day.day.month(), this.props.day.day.date()]).format('YYYY-MM-DD');
       } else {
         formattedDate = this.props.selectedOption.day.split("-");
         date = formattedDate.length > 1
-          ? moment().year(formattedDate[0]).month(formattedDate[1] - 1).date(formattedDate[2]).date()
-          : [];
+            //use minus one, to convert months into right format
+            ? moment([formattedDate[0], formattedDate[1] - 1, formattedDate[2]]).format('YYYY-MM-DD')
+            : [];
       }
     }
 
