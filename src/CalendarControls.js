@@ -2,7 +2,7 @@
 
 var React = require('react');
 
-var CalendarControls = React.createClass({
+var CalendarControls = React.createClass({displayName: "CalendarControls",
 
   _onNext: function() {
     this.props.onNext();
@@ -14,11 +14,11 @@ var CalendarControls = React.createClass({
 
   render: function() {
     return (
-      <div className='clndr-controls'>
-        <div onClick={this._onPrev}>Prev</div>
-        <div className='current-month'>{this.props.date.format('MMMM YYYY')}</div>
-        <div onClick={this._onNext}>Next</div>
-      </div>
+      React.createElement("div", {className: "clndr-controls"},
+        React.createElement("div", {onClick: this._onPrev}, "Prev"),
+        React.createElement("div", {className: "current-month"}, this.props.date.format('MMMM YYYY')),
+        React.createElement("div", {onClick: this._onNext}, "Next")
+      )
     );
   }
 });
