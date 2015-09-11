@@ -13,13 +13,23 @@ var CalendarControls = React.createClass({displayName: "CalendarControls",
   },
 
   render: function() {
-    return (
-      React.createElement("div", {className: "clndr-controls"},
-        React.createElement("div", {onClick: this._onPrev}, "Prev"),
-        React.createElement("div", {className: "current-month"}, this.props.date.format('MMMM YYYY')),
-        React.createElement("div", {onClick: this._onNext}, "Next")
-      )
-    );
+    if (this.props.calendarMonthShort) {
+      return (
+        sReact.createElement("div", {className: "clndr-controls"},
+          React.createElement("span", {className: "icon-arrow-left", onClick: this._onPrev}),
+          React.createElement("div", {className: "current-month"}, this.props.date.format('MMM YYYY')),
+          React.createElement("span", {className: "icon-arrow-right", onClick: this._onNext})
+        )
+      );
+    } else {
+      return (
+        React.createElement("div", {className: "clndr-controls"},
+          React.createElement("span", {className: "icon-arrow-left", onClick: this._onPrev}),
+          React.createElement("div", {className: "current-month"}, this.props.date.format('MMMM YYYY')),
+          React.createElement("span", {className: "icon-arrow-right", onClick: this._onNext})
+        )
+      );
+    }
   }
 });
 
