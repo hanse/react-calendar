@@ -13,6 +13,7 @@ var Calendar = React.createClass({displayName: "Calendar",
     showDaysOfWeek: React.PropTypes.bool,
     untilDate: React.PropTypes.bool,
     selectedOption: React.PropTypes.object,
+    calendarMonthShort: React.PropTypes.bool,
   },
 
   getDefaultProps: function() {
@@ -22,7 +23,8 @@ var Calendar = React.createClass({displayName: "Calendar",
       showDaysOfWeek: false,
       untilDate: false,
       selectedOption: {},
-      onPickDate: null
+      onPickDate: null,
+      calendarMonthShort: false
     };
   },
 
@@ -104,7 +106,7 @@ var Calendar = React.createClass({displayName: "Calendar",
   render: function() {
     return (
       React.createElement("div", {className: "clndr"},
-        React.createElement(CalendarControls, {date: this.state.date, onNext: this.next, onPrev: this.prev}),
+        React.createElement(CalendarControls, {date: this.state.date, onNext: this.next, onPrev: this.prev, calendarMonthShort: this.props.calendarMonthShort}),
         React.createElement("div", {className: "clndr-grid"},
           React.createElement("div", {className: "day-headers"},
             this.props.showDaysOfWeek && this.daysOfWeek().map(function(day, i)  {
