@@ -1,5 +1,34 @@
 # react-calendar
 
+This is an extension of original repository.
+
+What were added?
+
+- selectedOption (Object)
+- untilDate (Boolean)
+
+selectedOption structure
+
+```js
+ {
+    show: 'day|week',
+    day|week: 'YYYY-MM-D | YYYY-W'
+ }
+```
+
+allows user
+
+Example:
+  { show: 'day', day: moment().format('YYYY-MM-DD') }
+  { show: 'week', day: moment().format('YYYY-W') }
+
+
+    <Calendar selectedOption={this.state.selectedOption} showDaysOfWeek={true} forceSixRows={false}
+            untilDate={true} onPickDate={this.datePicked.bind(this)}/>
+
+
+
+
 [React](http://facebook.github.io/react/) calendar component inspired by [CLNDR.js](http://kylestetz.github.io/CLNDR/).
 
 ```
@@ -35,3 +64,7 @@ $ make
 
 # License
 MIT
+
+
+#Contributors
+Vladimir Katansky, Svyatoslav Dardalan

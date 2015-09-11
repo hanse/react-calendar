@@ -1,18 +1,23 @@
 {
-  "name": "react-calendar-component",
-  "version": "0.2.1",
-  "description": "React.js calendar component.",
+  "name": "react-calendar-flexible",
+  "version": "0.4.2",
+  "description": "React.js calendar component with controls",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Hanse/react-calendar"
+    "url": "git@github.com:Blackening999/react-calendar"
   },
-  "main": "./lib/index.js",
-  "scripts": {
-    "test": "make test",
-    "prepublish": "make publish"
+  "main": "./src/index.js",
+  "author": {
+    "name": "Vladimir Katansky",
+    "email": "pointhomefinal@gmail.com",
+    "url": "http://katansky-blog.com/"
   },
-  "author": "Hanse",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
   "keywords": [
     "react",
     "react.js",
