@@ -15,7 +15,7 @@ var CalendarControls = React.createClass({displayName: "CalendarControls",
   render: function() {
     if (this.props.calendarMonthShort) {
       return (
-        sReact.createElement("div", {className: "clndr-controls"},
+        React.createElement("div", {className: "clndr-controls"},
           React.createElement("span", {className: "icon-arrow-left", onClick: this._onPrev}),
           React.createElement("div", {className: "current-month"}, this.props.date.format('MMM YYYY')),
           React.createElement("span", {className: "icon-arrow-right", onClick: this._onNext})
