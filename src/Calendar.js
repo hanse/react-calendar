@@ -2,15 +2,18 @@
 
 var React = require('react');
 var moment = require('moment');
-var Day = require('./Day');
+var Week = require('./Week');
 var CalendarControls = require('./CalendarControls');
 
-var Calendar = React.createClass({
+var Calendar = React.createClass({displayName: "Calendar",
 
   propTypes: {
     weekOffset: React.PropTypes.number,
     forceSixRows: React.PropTypes.bool,
     showDaysOfWeek: React.PropTypes.bool,
+    untilDate: React.PropTypes.bool,
+    selectedOption: React.PropTypes.object,
+    calendarMonthShort: React.PropTypes.bool,
   },
 
   getDefaultProps: function() {
@@ -18,7 +21,10 @@ var Calendar = React.createClass({
       weekOffset: 0,
       forceSixRows: false,
       showDaysOfWeek: false,
-      onPickDate: null
+      untilDate: false,
+      selectedOption: {},
+      onPickDate: null,
+      calendarMonthShort: false
     };
   },
 
@@ -72,6 +78,20 @@ var Calendar = React.createClass({
     return days;
   },
 
+  weeks: function() {
+    var weeks = [], days = [[]], counter = 0;
+
+    this.days().forEach(function(day, i) {
+      if (i !== 0 && i % 7 === 0) {
+        weeks.push(days[counter]);
+        if (!days[++counter]) { days[counter] = []  }
+      }
+      days[counter].push(day);
+    }, this);
+
+    return weeks;
+  },
+
   daysOfWeek: function() {
     var daysOfWeek = this.props.daysOfWeek;
     if (!daysOfWeek) {
@@ -85,22 +105,27 @@ var Calendar = React.createClass({
 
   render: function() {
     return (
-      <div className='clndr'>
-        <CalendarControls date={this.state.date} onNext={this.next} onPrev={this.prev} />
-        <div className='clndr-grid'>
-          <div className='day-headers'>
-            {this.props.showDaysOfWeek && this.daysOfWeek().map((day, i) => {
-              return <div key={'weekday-' + i}>{day}</div>;
-            })}
-          </div>
-          <div className='days'>
-            {this.days().map((day, i) => {
-              return <Day key={'day-' + i} day={day} onClick={this.props.onPickDate} />;
-            })}
-          </div>
-          <div className='clearfix'></div>
-        </div>
-      </div>
+      React.createElement("div", {className: "clndr"},
+        React.createElement(CalendarControls, {date: this.state.date, onNext: this.next, onPrev: this.prev, calendarMonthShort: this.props.calendarMonthShort}),
+        React.createElement("div", {className: "clndr-grid"},
+          React.createElement("div", {className: "day-headers"},
+            this.props.showDaysOfWeek && this.daysOfWeek().map(function(day, i)  {
+              return React.createElement("div", {key: 'weekday-' + i}, day);
+            })
+          ),
+          React.createElement("div", {className: "weeks"},
+            this.weeks().map(function(week, i)  {
+              return React.createElement(Week, {
+                selectedOption: this.props.selectedOption,
+                untilDate: this.props.untilDate,
+                key: 'week-' + i,
+                week: week,
+                onClick: this.props.onPickDate});
+            }.bind(this))
+          ),
+          React.createElement("div", {className: "clearfix"})
+        )
+      )
     );
   }
 });
