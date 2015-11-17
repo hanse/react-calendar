@@ -2,6 +2,8 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -10,57 +12,58 @@ body {
   color: #444;
 }
 
-#app {
-  margin-top: 50px;
+#calendar {
+  width: 640px;
+  height: 480px;
+  margin: 100px auto;
 }
 
-.clndr-controls div {
-  background: #999;
-  display: inline-block;
-  width: 30%;
-  padding:5px;
+.Calendar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Calendar-header {
+  height: 50px;
+  background: #333;
+  color: #fff;
   text-align: center;
+  line-height: 50px;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+.Calendar-header button {
+  width: 50px;
+  font-size: 20px;
+  border: 0;
+  background: transparent;
+  color: #ddd;
   cursor: pointer;
 }
 
-.clndr-controls .current-month {
-  width: 40%;
-  background: #333;
-  color: #fff;
-}
-
-.clndr {
-  width: 700px;
-  margin: 0 auto;
-  background: red;
-}
-
-.clndr-grid {
+.Calendar-grid-item {
+  flex: 0 14.28571%;
   text-align: center;
-  background: yellow;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.clndr-grid .days div {
-  float: left;
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  background: #eee;
-  border: 1px solid #ddd;
+.Calendar-grid-item.nextMonth,
+.Calendar-grid-item.prevMonth {
+  color: #999;
 }
 
-.clndr-grid .day-headers div {
-  float: left;
-  width: 100px;
-  height: 40px;
-  line-height: 40px;
-  background: #eee;
+.Calendar-grid-item:nth-child(7n+1) {
+  border-left: 1px solid #ddd;
 }
 
-.prev-month, .next-month {
-  color: #ccc;
-}
-
-.clearfix {
-  clear: both;
+.Calendar-grid-item:nth-child(-n+7) {
+  border-top: 1px solid #ddd;
 }

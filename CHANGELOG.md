@@ -1,3 +1,7 @@
+## v1.0.0
+* Use babel and es6
+* Move state out of component
+
 
 ## v0.2.0
 * Added week day headers (optional)
