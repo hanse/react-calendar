@@ -1,33 +1,22 @@
 {
-  "name": "react-calendar-component",
+  "name": "calendar-basic",
   "version": "1.0.0",
-  "description": "React.js calendar component.",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Hanse/react-calendar"
-  },
-  "main": "./lib/index.js",
-  "jsnext:main": "./src/index.js",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "clean": "rm -rf lib dist",
-    "build": "babel src --out-dir lib"
+    "build": "browserify -t babelify main.js -o bundle.js"
   },
-  "author": "Hanse",
+  "author": "",
   "license": "MIT",
-  "keywords": [
-    "react",
-    "react.js",
-    "calendar",
-    "react component",
-    "react calendar component",
-    "clndr"
-  ],
-  "devDependencies": {
-    "babel": "^5.8.23"
+  "dependencies": {
+    "lodash": "3.10.1",
+    "moment": "2.10.6",
+    "react": "0.14.2",
+    "react-calendar-component": "1.0.0",
+    "react-dom": "0.14.2"
   },
-  "peerDependencies": {
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6",
-    "react": "^0.14.2"
+  "devDependencies": {
+    "babelify": "6.3.0",
+    "browserify": "12.0.1"
   }
 }
