@@ -1,3 +1,6 @@
+## v1.1.0
+* Upgrade to Babel 6 and allow React 15
+
 ## v1.0.0
 * Use babel and es6
 * Move state out of component
