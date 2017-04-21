@@ -20,12 +20,26 @@ export default class Calendar extends Component {
 
   render() {
     const { date, weekOffset, renderDay, onNextMonth, onPrevMonth, onPickDate } = this.props;
+
+    let previousMonth = moment(Object.assign({}, date));
+    previousMonth = previousMonth.subtract(1, "month").startOf("month").format('MMMM');
+
+    let nextMonth = moment(Object.assign({}, date));
+    nextMonth = nextMonth.add(1, "month").startOf("month").format('MMMM');
+
+    const months = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
     return (
       <div className='Calendar'>
         <div className='Calendar-header'>
-          <button onClick={onPrevMonth}>&laquo;</button>
+          <button onClick={onPrevMonth}>{`<`} {previousMonth}</button>
           <div className='Calendar-header-currentDate'>{date.format('MMMM YYYY')}</div>
-          <button onClick={onNextMonth}>&raquo;</button>
+          <button onClick={onNextMonth}>{nextMonth} {`>`}</button>
+        </div>
+        <div className='Calendar-grid Calendar-months'>
+          {months.map((month, index) =>
+            this.renderMonthLabel(month, index)
+          )}
         </div>
         <div className='Calendar-grid'>
           {createDateObjects(date, weekOffset).map((day, i) =>
@@ -38,6 +52,14 @@ export default class Calendar extends Component {
             </div>
           )}
         </div>
+      </div>
+    );
+  }
+
+  renderMonthLabel(month, index) {
+    return (
+      <div className="Calendar-grid-item Calendar-month-item" key={`month-${index}`}>
+        <span>{month}</span>
       </div>
     );
   }

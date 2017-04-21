@@ -47,8 +47,8 @@ body {
 .Calendar-grid-item {
   flex: 0 14.28571%;
   text-align: center;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  /*border-right: 1px solid #ddd;*/
+  /*border-bottom: 1px solid #ddd;*/
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -61,9 +61,18 @@ body {
 }
 
 .Calendar-grid-item:nth-child(7n+1) {
-  border-left: 1px solid #ddd;
+  /*border-left: 1px solid #ddd;*/
 }
 
 .Calendar-grid-item:nth-child(-n+7) {
-  border-top: 1px solid #ddd;
+  /*border-top: 1px solid #ddd;*/
+}
+
+.Calendar-grid-item.Calendar-month-item {
+  border: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  font-weight: bold;
 }
