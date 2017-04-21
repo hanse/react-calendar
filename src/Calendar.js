@@ -32,16 +32,22 @@ export default class Calendar extends Component {
     return (
       <div className='Calendar'>
         <div className='Calendar-header'>
-          <button onClick={onPrevMonth}>{`<`} {previousMonth}</button>
+          <button onClick={onPrevMonth}>
+            <i className='fa fa-angle-left' aria-hidden='true'></i>
+            {previousMonth}
+          </button>
           <div className='Calendar-header-currentDate'>{date.format('MMMM YYYY')}</div>
-          <button onClick={onNextMonth}>{nextMonth} {`>`}</button>
+          <button onClick={onNextMonth}>
+            {nextMonth}
+            <i className='fa fa-angle-right' aria-hidden='true'></i>
+          </button>
         </div>
         <div className='Calendar-grid Calendar-months'>
           {months.map((month, index) =>
             this.renderMonthLabel(month, index)
           )}
         </div>
-        <div className='Calendar-grid'>
+        <div className='Calendar-grid Calendar-days'>
           {createDateObjects(date, weekOffset).map((day, i) =>
             <div
               key={`day-${i}`}
