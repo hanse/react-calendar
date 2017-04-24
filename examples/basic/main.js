@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Calendar } from 'react-calendar-component';
+import { Calendar } from '../../src';
 import moment from 'moment';
-import 'moment/locale/nb';
 
 class CalendarExample extends Component {
   state = {
