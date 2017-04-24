@@ -1,7 +1,7 @@
 import { range, takeWhile, last } from 'lodash';
 import moment from 'moment';
 
-export default function createDateObjects(date, weekOffset = 0) {
+export default function createDateObjects(date, weekOffset = 0, monthEvents) {
   const startOfMonth = date.startOf('month');
 
   let diff = startOfMonth.weekday() - weekOffset;
@@ -12,9 +12,17 @@ export default function createDateObjects(date, weekOffset = 0) {
     classNames: 'prevMonth'
   }));
 
-  const currentMonthDays = range(1, date.daysInMonth() + 1).map(index => ({
+  let currentMonthDays = range(1, date.daysInMonth() + 1).map(index => ({
     day: moment([date.year(), date.month(), index])
   }));
+
+  currentMonthDays.map((currentDay, index) => {
+    monthEvents.map(eventDay => {
+      if (currentDay.day.format('YYYY-MM-DD') == eventDay.format('YYYY-MM-DD')) {
+        currentMonthDays[index].classNames = 'Calendar-event-day';
+      }
+    });
+  });
 
   const daysAdded = prevMonthDays.length + currentMonthDays.length - 1;
   const nextMonthDays = takeWhile(range(1, 7), n => (daysAdded + n) % 7 !== 0).map((n) => ({

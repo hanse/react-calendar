@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import createDateObjects from './createDateObjects';
 
@@ -29,6 +30,8 @@ export default class Calendar extends Component {
 
     const months = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
+    const dates = [moment('20170505', 'YYYYMMDD'), moment('20170401', 'YYYYMMDD'), moment('20170405', 'YYYYMMDD'), moment()];
+
     return (
       <div className='Calendar'>
         <div className='Calendar-header'>
@@ -48,13 +51,14 @@ export default class Calendar extends Component {
           )}
         </div>
         <div className='Calendar-grid Calendar-days'>
-          {createDateObjects(date, weekOffset).map((day, i) =>
+          {createDateObjects(date, weekOffset, dates).map((day, i) =>
             <div
               key={`day-${i}`}
               className={`Calendar-grid-item ${day.classNames || ''}`}
               onClick={(e) => onPickDate(day.day)}
             >
               {renderDay(day.day)}
+              {this.renderEventCircle(day)}
             </div>
           )}
         </div>
@@ -68,5 +72,13 @@ export default class Calendar extends Component {
         <span>{month}</span>
       </div>
     );
+  }
+
+  renderEventCircle(day) {
+    if (day.classNames == 'Calendar-event-day') {
+      return (
+        <div className='Calendar-event-day-circle'></div>
+      );
+    }
   }
 }

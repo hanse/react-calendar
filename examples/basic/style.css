@@ -70,12 +70,30 @@ body {
   justify-content: center;
 }
 
-.Calendar-grid-item:nth-child(7n+1) {
-}
-
-.Calendar-grid-item:nth-child(-n+7) {
+.Calendar-grid-item.prevMonth,
+.Calendar-grid-item.nextMonth
+{
+  color: #BBBBBB;
 }
 
 .Calendar-grid-item.Calendar-month-item {
   font-weight: bold;
+}
+
+
+.Calendar-event-day {
+  cursor: pointer;
+}
+
+.Calendar-event-day-circle {
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  padding: 5px;
+  background: #0079c2;
+  border: none;
+  color: #666;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 24px;
 }
