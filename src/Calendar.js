@@ -8,6 +8,7 @@ export default class Calendar extends Component {
   static propTypes = {
     weekOffset: PropTypes.number.isRequired,
     date: PropTypes.object.isRequired,
+    events: PropTypes.object.isRequired,
     renderDay: PropTypes.func,
     onNextMonth: PropTypes.func.isRequired,
     onPrevMonth: PropTypes.func.isRequired,
@@ -20,7 +21,7 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { date, weekOffset, renderDay, onNextMonth, onPrevMonth, onPickDate } = this.props;
+    const { date, weekOffset, renderDay, onNextMonth, onPrevMonth, onPickDate, events } = this.props;
 
     let previousMonth = moment(Object.assign({}, date));
     previousMonth = previousMonth.subtract(1, "month").startOf("month").format('MMMM');
@@ -29,8 +30,6 @@ export default class Calendar extends Component {
     nextMonth = nextMonth.add(1, "month").startOf("month").format('MMMM');
 
     const months = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-
-    const dates = [moment('20170505', 'YYYYMMDD'), moment('20170401', 'YYYYMMDD'), moment('20170405', 'YYYYMMDD'), moment()];
 
     return (
       <div className='Calendar'>
@@ -51,7 +50,7 @@ export default class Calendar extends Component {
           )}
         </div>
         <div className='Calendar-grid Calendar-days'>
-          {createDateObjects(date, weekOffset, dates).map((day, i) =>
+          {createDateObjects(date, weekOffset, events).map((day, i) =>
             <div
               key={`day-${i}`}
               className={`Calendar-grid-item ${day.classNames || ''}`}
