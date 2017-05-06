@@ -1,9 +1,12 @@
+## v1.1.1
+Switch to the [prop-types](https://github.com/reactjs/prop-types) package.
+
 ## v1.1.0
 * Upgrade to Babel 6 and allow React 15
 
 ## v1.0.0
-* Use babel and es6
-* Move state out of component
+* Use Babel and ES6
+* Move state out of the component
 
 
 ## v0.2.0
