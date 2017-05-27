@@ -1,3 +1,6 @@
+## v1.2.0
+Add `onChangeMonth` as a replacement for `onPrevMonth` and `onNextMonth`.
+
 ## v1.1.1
 Switch to the [prop-types](https://github.com/reactjs/prop-types) package.
 
