@@ -7,22 +7,26 @@ import 'moment/locale/nb';
 class CalendarExample extends Component {
   state = {
     date: moment()
-  }
+  };
 
   render() {
     return (
       <Calendar
-        onNextMonth={() => this.setState({ date: this.state.date.clone().add(1, 'months') }) }
-        onPrevMonth={() => this.setState({ date: this.state.date.clone().subtract(1, 'months') }) }
+        onChangeMonth={date => this.setState({ date })}
         date={this.state.date}
-        onPickDate={(date) => console.log(date)}
-        renderDay={(day) => day.format('D')}
+        onPickDate={date => console.log(date)}
+        renderDay={date => (
+          <span
+            style={{
+              fontWeight: date.isSame(moment(), 'day') ? 700 : 400
+            }}
+          >
+            {date.format('D')}
+          </span>
+        )}
       />
     );
   }
 }
 
-render(
-  <CalendarExample />,
-  document.getElementById('calendar')
-);
+render(<CalendarExample />, document.getElementById('calendar'));

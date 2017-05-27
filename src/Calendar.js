@@ -5,17 +5,41 @@ import createDateObjects from './createDateObjects';
 
 export default class Calendar extends Component {
   static propTypes = {
+    /** Week offset*/
     weekOffset: PropTypes.number.isRequired,
+    /** The current date as a moment objecct */
     date: PropTypes.object.isRequired,
+    /** Function to render a day cell */
     renderDay: PropTypes.func,
-    onNextMonth: PropTypes.func.isRequired,
-    onPrevMonth: PropTypes.func.isRequired,
+    /** Called on next month click */
+    onNextMonth: PropTypes.func,
+    /** Called on prev month click */
+    onPrevMonth: PropTypes.func,
+    /** Called when some of the navigation controls are clicked */
+    onChangeMonth: PropTypes.func,
+    /** Called when a date is clicked */
     onPickDate: PropTypes.func
   };
 
   static defaultProps = {
     weekOffset: 0,
     renderDay: day => day.format('YYYY-MM-D')
+  };
+
+  handleNextMonth = () => {
+    if (this.props.onNextMonth) {
+      return this.props.onNextMonth();
+    }
+
+    this.props.onChangeMonth(this.props.date.clone().add(1, 'months'));
+  };
+
+  handlePrevMonth = () => {
+    if (this.props.onPrevMonth) {
+      return this.props.onPrevMonth();
+    }
+
+    this.props.onChangeMonth(this.props.date.clone().subtract(1, 'months'));
   };
 
   render() {
@@ -25,16 +49,18 @@ export default class Calendar extends Component {
       renderDay,
       onNextMonth,
       onPrevMonth,
-      onPickDate
+      onPickDate,
+      onChange
     } = this.props;
+
     return (
       <div className="Calendar">
         <div className="Calendar-header">
-          <button onClick={onPrevMonth}>«</button>
+          <button onClick={this.handlePrevMonth}>«</button>
           <div className="Calendar-header-currentDate">
             {date.format('MMMM YYYY')}
           </div>
-          <button onClick={onNextMonth}>»</button>
+          <button onClick={this.handleNextMonth}>»</button>
         </div>
         <div className="Calendar-grid">
           {createDateObjects(date, weekOffset).map((day, i) => (

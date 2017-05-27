@@ -24,8 +24,7 @@ class CalendarExample extends Component {
   render() {
     return (
       <Calendar
-        onNextMonth={() => this.setState({ date: this.state.date.clone().add(1, 'months') }) }
-        onPrevMonth={() => this.setState({ date: this.state.date.clone().subtract(1, 'months') }) }
+        onChangeMonth={(date) => this.setState({ date })}
         date={this.state.date}
         onPickDate={(date) => console.log(date)}
       />
