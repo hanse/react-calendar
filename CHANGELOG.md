@@ -1,8 +1,11 @@
+## v1.2.1
+* Remove lodash dependency
+
 ## v1.2.0
-Add `onChangeMonth` as a replacement for `onPrevMonth` and `onNextMonth`.
+* Add `onChangeMonth` as a replacement for `onPrevMonth` and `onNextMonth`.
 
 ## v1.1.1
-Switch to the [prop-types](https://github.com/reactjs/prop-types) package.
+* Switch to the [prop-types](https://github.com/reactjs/prop-types) package.
 
 ## v1.1.0
 * Upgrade to Babel 6 and allow React 15
@@ -17,4 +20,4 @@ Switch to the [prop-types](https://github.com/reactjs/prop-types) package.
 * Added onPickDate callback
 
 ## v0.1.0
-`require('react-calendar-component')` returns an object with all the elements instead of just `<Calendar/>`.
+* `require('react-calendar-component')` returns an object with all the elements instead of just `<Calendar/>`.
