@@ -11,7 +11,8 @@
   "scripts": {
     "clean": "rm -rf lib dist",
     "build": "babel src --out-dir lib",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn run build"
   },
   "author": "Hanse",
   "license": "MIT",
