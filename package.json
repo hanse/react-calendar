@@ -10,7 +10,8 @@
   "jsnext:main": "./src/index.js",
   "scripts": {
     "clean": "rm -rf lib dist",
-    "build": "babel src --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "test": "jest"
   },
   "author": "Hanse",
   "license": "MIT",
@@ -32,8 +33,10 @@
     "babel-preset-stage-2": "6.13.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.8",
+    "babel-jest": "^21.0.2",
+    "jest": "^21.0.2",
     "lodash": "^4.2.1",
-    "moment": "^2.10.6"
+    "moment": "^2.10.6",
+    "prop-types": "^15.5.8"
   }
 }
