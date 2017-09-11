@@ -24,18 +24,17 @@
     "clndr"
   ],
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-rc"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
+    "babel-jest": "^21.0.2",
     "babel-preset-es2015": "6.14.0",
     "babel-preset-react": "6.11.1",
-    "babel-preset-stage-2": "6.13.0"
+    "babel-preset-stage-2": "6.13.0",
+    "jest": "^21.0.2"
   },
   "dependencies": {
-    "babel-jest": "^21.0.2",
-    "jest": "^21.0.2",
-    "lodash": "^4.2.1",
     "moment": "^2.10.6",
     "prop-types": "^15.5.8"
   }
