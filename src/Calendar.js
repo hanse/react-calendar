@@ -7,8 +7,8 @@ export default class Calendar extends Component {
   static propTypes = {
     /** Week offset*/
     weekOffset: PropTypes.number.isRequired,
-    /** The current date as a moment objecct */
-    date: PropTypes.object.isRequired,
+    /** The current date as a moment object */
+    date: PropTypes.object,
     /** Function to render a day cell */
     renderDay: PropTypes.func,
     /** Called on next month click */
@@ -26,25 +26,57 @@ export default class Calendar extends Component {
     renderDay: day => day.format('YYYY-MM-D')
   };
 
+  constructor() {
+    super();
+    this.state = {};
+  };
+
+  componentWillMount() {
+    this.componentWillReceiveProps(this.props);
+  };
+
+  componentWillReceiveProps (nextProps) {
+    this.setDate(nextProps.date || moment());
+  };
+
+  setDate (date) {
+    this.setState(state => Object.assign(state, { date }));
+  };
+
   handleNextMonth = () => {
-    if (this.props.onNextMonth) {
-      return this.props.onNextMonth();
+    const { onNextMonth, onChangeMonth } = this.props;
+
+    if (onNextMonth) {
+      return onNextMonth();
     }
 
-    this.props.onChangeMonth(this.props.date.clone().add(1, 'months'));
+    if (onChangeMonth) {
+      onChangeMonth(this.state.date.clone().add(1, 'months'));
+    }
+
+    if (!onNextMonth && !onChangeMonth) {
+      this.setDate(this.state.date.clone().add(1, 'months'));
+    }
   };
 
   handlePrevMonth = () => {
-    if (this.props.onPrevMonth) {
-      return this.props.onPrevMonth();
+    const { onPrevMonth, onChangeMonth } = this.props;
+
+    if (onPrevMonth) {
+      return onPrevMonth();
     }
 
-    this.props.onChangeMonth(this.props.date.clone().subtract(1, 'months'));
+    if (onChangeMonth) {
+      onChangeMonth(this.state.date.clone().subtract(1, 'months'));
+    }
+
+    if (!onPrevMonth && !onChangeMonth) {
+      this.setDate(this.state.date.clone().subtract(1, 'months'));
+    }
   };
 
   render() {
     const {
-      date,
       weekOffset,
       renderDay,
       onNextMonth,
@@ -52,6 +84,8 @@ export default class Calendar extends Component {
       onPickDate,
       onChange
     } = this.props;
+
+    const date = this.state.date;
 
     return (
       <div className="Calendar">
@@ -67,7 +101,7 @@ export default class Calendar extends Component {
             <div
               key={`day-${i}`}
               className={`Calendar-grid-item ${day.classNames || ''}`}
-              onClick={e => onPickDate(day.day)}
+              onClick={e => onPickDate && onPickDate(day.day)}
             >
               {renderDay(day.day)}
             </div>
