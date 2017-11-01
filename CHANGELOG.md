@@ -1,3 +1,6 @@
+## unpublished
+* Add `renderHeader` to allow using a different header component.
+
 ## v1.2.1
 * Remove lodash dependency
 
