@@ -65,7 +65,11 @@ export default class Calendar extends Component {
 
     return (
       <div className="Calendar">
-        {renderHeader({ date, onPrevMonth: handlePrevMonth, onNextMonth: handleNextMonth })}
+        {renderHeader({
+          date,
+          onPrevMonth: handlePrevMonth,
+          onNextMonth: handleNextMonth
+        })}
         <div className="Calendar-grid">
           {createDateObjects(date, weekOffset).map((day, i) => (
             <div
