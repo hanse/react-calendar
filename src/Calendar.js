@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import createDateObjects from './createDateObjects';
 
 export default class Calendar extends Component {
@@ -11,6 +10,8 @@ export default class Calendar extends Component {
     date: PropTypes.object.isRequired,
     /** Function to render a day cell */
     renderDay: PropTypes.func,
+    /** Function to render the header */
+    renderHeader: PropTypes.func,
     /** Called on next month click */
     onNextMonth: PropTypes.func,
     /** Called on prev month click */
@@ -23,7 +24,16 @@ export default class Calendar extends Component {
 
   static defaultProps = {
     weekOffset: 0,
-    renderDay: day => day.format('YYYY-MM-D')
+    renderDay: day => day.format('YYYY-MM-D'),
+    renderHeader: ({ date, onPrevMonth, onNextMonth }) => (
+      <div className="Calendar-header">
+        <button onClick={onPrevMonth}>«</button>
+        <div className="Calendar-header-currentDate">
+          {date.format('MMMM YYYY')}
+        </div>
+        <button onClick={onNextMonth}>»</button>
+      </div>
+    )
   };
 
   handleNextMonth = () => {
@@ -47,21 +57,15 @@ export default class Calendar extends Component {
       date,
       weekOffset,
       renderDay,
-      onNextMonth,
-      onPrevMonth,
-      onPickDate,
-      onChange
+      renderHeader,
+      onPickDate
     } = this.props;
+
+    const { handlePrevMonth, handleNextMonth } = this;
 
     return (
       <div className="Calendar">
-        <div className="Calendar-header">
-          <button onClick={this.handlePrevMonth}>«</button>
-          <div className="Calendar-header-currentDate">
-            {date.format('MMMM YYYY')}
-          </div>
-          <button onClick={this.handleNextMonth}>»</button>
-        </div>
+        {renderHeader({ date, onPrevMonth: handlePrevMonth, onNextMonth: handleNextMonth })}
         <div className="Calendar-grid">
           {createDateObjects(date, weekOffset).map((day, i) => (
             <div

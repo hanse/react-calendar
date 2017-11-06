@@ -1,0 +1,1072 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar renders with custom day render 1`] = `
+<div
+  className="Calendar"
+>
+  <div
+    className="Calendar-header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      «
+    </button>
+    <div
+      className="Calendar-header-currentDate"
+    >
+      November 2017
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      »
+    </button>
+  </div>
+  <div
+    className="Calendar-grid"
+  >
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      <span>
+        29
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      <span>
+        30
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      <span>
+        31
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        3
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        4
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        5
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        6
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        7
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        8
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        9
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        10
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        11
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        12
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        13
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        14
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        15
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        16
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        17
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        18
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        19
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        20
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        21
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        22
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        23
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        24
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        25
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        26
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        27
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        28
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        29
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      <span>
+        30
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      <span>
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with custom header render 1`] = `
+<div
+  className="Calendar"
+>
+  <div>
+    <div
+      className="Calendar-header"
+    >
+      <button
+        onClick={[Function]}
+      >
+        «
+      </button>
+      <div
+        className="Calendar-header-currentDate"
+      >
+        November 2017
+      </div>
+      <button
+        onClick={[Function]}
+      >
+        »
+      </button>
+    </div>
+    <div
+      className="Calendar-grid Calendar-week-day-names mb-sm"
+    >
+      <div
+        className="Calendar-grid-item"
+      >
+        Mon
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Tue
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Wed
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Thu
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Fri
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Sat
+      </div>
+      <div
+        className="Calendar-grid-item"
+      >
+        Sun
+      </div>
+    </div>
+  </div>
+  <div
+    className="Calendar-grid"
+  >
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-29
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-30
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-31
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-1
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-2
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-3
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-4
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-5
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-6
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-7
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-8
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-9
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-10
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-11
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-12
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-13
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-14
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-15
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-16
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-17
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-18
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-19
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-20
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-21
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-22
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-23
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-24
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-25
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-26
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-27
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-28
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-29
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-30
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-1
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with minimal props 1`] = `
+<div
+  className="Calendar"
+>
+  <div
+    className="Calendar-header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      «
+    </button>
+    <div
+      className="Calendar-header-currentDate"
+    >
+      November 2017
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      »
+    </button>
+  </div>
+  <div
+    className="Calendar-grid"
+  >
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-29
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-30
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-31
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-1
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-2
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-3
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-4
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-5
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-6
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-7
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-8
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-9
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-10
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-11
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-12
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-13
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-14
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-15
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-16
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-17
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-18
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-19
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-20
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-21
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-22
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-23
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-24
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-25
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-26
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-27
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-28
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-29
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-30
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-1
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar renders with weekOffset=1 1`] = `
+<div
+  className="Calendar"
+>
+  <div
+    className="Calendar-header"
+  >
+    <button
+      onClick={[Function]}
+    >
+      «
+    </button>
+    <div
+      className="Calendar-header-currentDate"
+    >
+      November 2017
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      »
+    </button>
+  </div>
+  <div
+    className="Calendar-grid"
+  >
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-30
+    </div>
+    <div
+      className="Calendar-grid-item prevMonth"
+      onClick={[Function]}
+    >
+      2017-10-31
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-1
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-2
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-3
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-4
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-5
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-6
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-7
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-8
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-9
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-10
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-11
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-12
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-13
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-14
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-15
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-16
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-17
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-18
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-19
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-20
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-21
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-22
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-23
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-24
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-25
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-26
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-27
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-28
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-29
+    </div>
+    <div
+      className="Calendar-grid-item "
+      onClick={[Function]}
+    >
+      2017-11-30
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-1
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-2
+    </div>
+    <div
+      className="Calendar-grid-item nextMonth"
+      onClick={[Function]}
+    >
+      2017-12-3
+    </div>
+  </div>
+</div>
+`;
