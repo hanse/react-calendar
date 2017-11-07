@@ -1,4 +1,4 @@
-## unpublished
+## v1.3.0
 * Add `renderHeader` to allow using a different header component.
 
 ## v1.2.1
