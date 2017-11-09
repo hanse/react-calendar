@@ -49,6 +49,7 @@
     "react-test-renderer": "^16.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "moment": "^2.10.6",
     "prop-types": "^15.5.8"
   }

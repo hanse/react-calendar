@@ -55,15 +55,19 @@ body {
   justify-content: center;
 }
 
+.Calendar-grid-item--current {
+  font-weight: 700;
+}
+
 .Calendar-grid-item.nextMonth,
 .Calendar-grid-item.prevMonth {
   color: #999;
 }
 
-.Calendar-grid-item:nth-child(7n+1) {
+.Calendar-grid-item:nth-child(7n + 1) {
   border-left: 1px solid #ddd;
 }
 
-.Calendar-grid-item:nth-child(-n+7) {
+.Calendar-grid-item:nth-child(-n + 7) {
   border-top: 1px solid #ddd;
 }

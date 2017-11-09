@@ -1,3 +1,9 @@
+## next
+* Add `contentClassName` and `containerClassName` props.
+
+**Breaking changes**
+* Make it more flexible by removing the wrapping div in `renderDay`. You are now in full control of the rendering.
+
 ## v1.3.0
 * Add `renderHeader` to allow using a different header component.
 
