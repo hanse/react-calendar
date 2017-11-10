@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 import Calendar from '../Calendar';
 import renderer from 'react-test-renderer';
@@ -20,7 +21,9 @@ test('Calendar renders with weekOffset=1', () => {
 
 test('Calendar renders with custom day render', () => {
   const today = moment('2017-11-01T07:00:00');
-  const renderDay = day => <span>{day.format('D')}</span>;
+  const renderDay = ({ day }) => (
+    <span key={day.format()}>{day.format('D')}</span>
+  );
   const component = renderer.create(
     <Calendar date={today} renderDay={renderDay} />
   );
@@ -50,12 +53,6 @@ test('Calendar renders with custom header render', () => {
       </div>
     </div>
   );
-  // somehow react/prop-types looks at renderHeader as an own component -> add prop types
-  renderHeader.propTypes = {
-    date: PropTypes.object,
-    onPrevMonth: PropTypes.func,
-    onNextMonth: PropTypes.func
-  };
 
   const component = renderer.create(
     <Calendar date={today} renderHeader={renderHeader} />

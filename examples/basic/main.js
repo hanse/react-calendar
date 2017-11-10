@@ -15,15 +15,6 @@ class CalendarExample extends Component {
         onChangeMonth={date => this.setState({ date })}
         date={this.state.date}
         onPickDate={date => console.log(date)}
-        renderDay={date => (
-          <span
-            style={{
-              fontWeight: date.isSame(moment(), 'day') ? 700 : 400
-            }}
-          >
-            {date.format('D')}
-          </span>
-        )}
       />
     );
   }
