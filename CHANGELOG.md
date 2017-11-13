@@ -1,8 +1,25 @@
-## next
+## v2.0.0
 * Add `contentClassName` and `containerClassName` props.
 
 **Breaking changes**
-* Make it more flexible by removing the wrapping div in `renderDay`. You are now in full control of the rendering.
+* Make it more flexible by removing the wrapping div in `renderDay`. You are now in full control of the rendering. The default implementation is:
+```js
+<Calendar
+  renderDay={({ day, classNames, onPickDate }) => (
+    <div
+      key={day.format()}
+      className={cx(
+        'Calendar-grid-item',
+        day.isSame(moment(), 'day') && 'Calendar-grid-item--current',
+        classNames
+      )}
+      onClick={e => onPickDate(day)}
+    >
+      {day.format('D')}
+    </div>
+  )}
+/>
+```
 
 ## v1.3.0
 * Add `renderHeader` to allow using a different header component.
