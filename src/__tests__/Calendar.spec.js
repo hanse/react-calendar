@@ -4,6 +4,15 @@ import React from 'react';
 import moment from 'moment';
 import Calendar from '../Calendar';
 import renderer from 'react-test-renderer';
+import timekeeper from 'timekeeper';
+
+beforeEach(() => {
+  timekeeper.freeze(moment('2017-11-09T07:00:00Z').toDate());
+});
+
+afterEach(() => {
+  timekeeper.reset();
+});
 
 test('Calendar renders with minimal props', () => {
   const today = moment('2017-11-01T07:00:00');
