@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 export default function createDateObjects(date, weekOffset = 0) {
-  const startOfMonth = date.startOf('month');
+  const startOfMonth = date.clone().startOf('month');
 
   let diff = startOfMonth.weekday() - weekOffset;
   if (diff < 0) diff += 7;
@@ -10,14 +10,16 @@ export default function createDateObjects(date, weekOffset = 0) {
   for (let i = 0; i < diff; i++) {
     prevMonthDays.push({
       day: startOfMonth.clone().subtract(diff - i, 'days'),
-      classNames: 'prevMonth'
+      classNames: 'prevMonth',
+      date
     });
   }
 
   const currentMonthDays = [];
   for (let i = 1; i < date.daysInMonth() + 1; i++) {
     currentMonthDays.push({
-      day: moment([date.year(), date.month(), i])
+      day: moment([date.year(), date.month(), i]),
+      date
     });
   }
 
@@ -30,7 +32,8 @@ export default function createDateObjects(date, weekOffset = 0) {
       day: currentMonthDays[currentMonthDays.length - 1].day
         .clone()
         .add(i, 'days'),
-      classNames: 'nextMonth'
+      classNames: 'nextMonth',
+      date
     });
 
     i = i + 1;
