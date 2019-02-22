@@ -1,3 +1,7 @@
+## unreleased
+* Stop mutating `date` in createDateObjects method (thanks @florentdestremau)
+* Babel 6 -> 7. React 15.x is now minimum.
+
 ## v2.0.0
 * Add `contentClassName` and `containerClassName` props.
 
