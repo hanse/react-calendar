@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-react": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
@@ -49,8 +51,6 @@
     "timekeeper": "^2.1.2"
   },
   "dependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-react": "^7.0.0",
     "classnames": "^2.2.5",
     "moment": "^2.19.1",
     "prop-types": "^15.7.2"
