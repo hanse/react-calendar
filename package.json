@@ -50,7 +50,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-react": "^7.0.0",
     "classnames": "^2.2.5",
     "moment": "^2.19.1",
