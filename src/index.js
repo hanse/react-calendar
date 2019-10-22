@@ -1,3 +1,3 @@
 export { default as Calendar } from './Calendar';
 
-export { FlavioClass } from './FlavioClass'
+export {  default as FlavioClass } from './FlavioClass'
