@@ -13,7 +13,7 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-2": "6.13.0",
     "lodash": "^4.17.11",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "15.3.2",
     "react-calendar-component": "latest",
     "react-dom": "15.3.2"
